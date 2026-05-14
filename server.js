@@ -15,9 +15,16 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 console.log("SENDGRID KEY:", process.env.SENDGRID_API_KEY ? "Loaded ✅" : "Missing ❌");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
+const cors = require("cors");
 const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://monart-frontend.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // =======================
