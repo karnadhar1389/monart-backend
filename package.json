@@ -1,0 +1,1 @@
+{"name":"monart-api","private":true,"type":"module","scripts":{"start":"node server.js","dev":"node --watch server.js"},"dependencies":{"cors":"^2.8.5","dotenv":"^16.6.1","express":"^5.1.0","firebase-admin":"^13.4.0","mongoose":"^8.18.0","stripe":"^18.4.0"}}

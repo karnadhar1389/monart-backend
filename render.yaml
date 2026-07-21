@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: monart-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MONGO_URI
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: CLIENT_ORIGINS
+        sync: false
